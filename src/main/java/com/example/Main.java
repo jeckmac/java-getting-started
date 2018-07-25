@@ -38,6 +38,12 @@ import java.util.Map;
 @SpringBootApplication
 public class Main {
 
+  @RequestMapping("/hello")
+    String hello(Map model) {
+    model.put ("message", "Welcome to my app!");
+    return "hello";
+  }
+  
   @Value("${spring.datasource.url}")
   private String dbUrl;
 
